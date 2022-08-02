@@ -13,11 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('products');
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('isbn')->unique();
             $table->decimal('value', 10, 2);
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
             $table->softDeletes();
         });

@@ -23,11 +23,13 @@ RUN apt-get install -y git
 RUN apt-get install -y unzip
 RUN cd /var/www/html && \
     composer require laravel/ui && \
+    composer require laravel/passport && \
     composer install && \
     mv .env.example .env && \
     php artisan key:generate && \
     php artisan route:clear && \
     php artisan route:cache
+
 RUN npm install
 RUN apt-get install -y nano
 #RUN nano /etc/apache2/error.log

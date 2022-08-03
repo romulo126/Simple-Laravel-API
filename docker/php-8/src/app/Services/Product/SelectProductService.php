@@ -3,10 +3,10 @@
 namespace App\Services\Product;
 
 use App\Repositories\Product\ProductRepositoryEloquent;
-use App\Services\Product\Contract\SelectProtuctServiceContract;
+use App\Services\Product\Contract\SelectProductServiceContract;
 use App\Models\Product;
 
-class SelectProtuctService implements SelectProtuctServiceContract
+class SelectProductService implements SelectProductServiceContract
 {
     /**
      * @var ProductRepositoryEloquent

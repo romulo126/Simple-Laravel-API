@@ -3,27 +3,27 @@
 namespace App\Http\Controllers;
 
 
-use App\Services\Product\SelectProtuctService;
+use App\Services\Product\SelectProductService;
 use Illuminate\Http\Response;
 use Exception;
 
-class SelectAllProtuctController extends Controller
+class SelectAllProductController extends Controller
 {
 
     /**
-     * @var SelectProtuctService
+     * @var SelectProductService
      */
-    private $selectProtuctService;
+    private $selectProductService;
 
-    public function __construct(SelectProtuctService $selectProtuctService)
+    public function __construct(SelectProductService $selectProductService)
     {
-        $this->selectProtuctService = $selectProtuctService;
+        $this->selectProductService = $selectProductService;
     }
 
     public function __invoke()
     {
         try{
-            $data = $this->selectProtuctService->getAllProducts();
+            $data = $this->selectProductService->getAllProducts();
             return response()->json(['data'=>$data,
                                      'status'=>Response::HTTP_OK], Response::HTTP_OK);
         } catch (Exception $e) {

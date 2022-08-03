@@ -11,3 +11,4 @@
 ``` docker exec -u 0 -t laravel_docker npm run dev ```
 ``` docker exec -u 0 -t laravel_docker php artisan passport:install ```
 ``` docker exec -u 0 -t laravel_docker php artisan --force passport:keys ```
+``` docker exec -u 0 -t laravel_docker php artisan db:seed ```

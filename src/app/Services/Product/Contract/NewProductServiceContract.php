@@ -2,12 +2,7 @@
 
 namespace App\Services\Product\Contract;
 
-use App\Repositories\Product\ProductRepositoryEloquent;
-
 interface NewProductServiceContract {
-
-
-     public function __construct(ProductRepositoryEloquent $ProductRepositoryEloquent);
 
     /**
      * @param string $name

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\NewProductRequest;
 use App\Services\Product\NewProductService;
 use Illuminate\Http\Response;
+
 class NewProtuctController extends Controller
 {
 

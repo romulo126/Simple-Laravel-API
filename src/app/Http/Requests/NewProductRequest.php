@@ -27,7 +27,7 @@ class NewProductRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
             'value' => ['nullable', 'numeric', 'min:0'],
-            'isbn' => ['nullable', 'string', 'max:255'],
+            'isbn' => ['nullable', 'string', 'max:255', new NewProductRule()],
         ];
     }
 }

@@ -46,21 +46,21 @@ interface ProductRepositoryContract {
     /**
      * Update product by id
      * @param int $id
-     * @param string $name
-     * @param string $isbn
-     * @param float $value
+     * @param ?string $name
+     * @param ?string $isbn
+     * @param ?float $value
      * @return bool
      */
-    public function updateProduct(int $id, string $name, string $isbn, float $value): bool;
+    public function updateProduct(int $id, ?string $name, ?string $isbn, ?float $value): bool;
 
     /**
      * Update product by isbn
      * @param string $isbn
-     * @param string $name
-     * @param float $value
+     * @param ?string $name
+     * @param ?float $value
      * @return bool
      */
-    public function updateProductByIsbn(string $isbn, string $name, float $value): bool;
+    public function updateProductByIsbn(string $isbn, ?string $name, ?float $value): bool;
 
     /**
      * Delete product by id

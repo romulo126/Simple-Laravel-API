@@ -71,18 +71,18 @@ class ProductRepositoryEloquent implements ProductRepositoryContract
     /**
      * Update product by id
      * @param int $id
-     * @param string $name
-     * @param string $isbn
-     * @param float $value
+     * @param ?string $name
+     * @param ?string $isbn
+     * @param ?float $value
      * @return bool
      */
-    public function updateProduct(int $id, string $name, string $isbn, float $value): bool
+    public function updateProduct(int $id, ?string $name, ?string $isbn, ?float $value): bool
     {
         $product = Product::find($id);
         if($product) {
-            $product->name = $name;
-            $product->isbn = $isbn;
-            $product->value = $value;
+            $product->name  = !is_null($name) ? $name : $product->name;
+            $product->isbn  = !is_null($isbn) ? $isbn : $product->isbn;
+            $product->value = !is_null($value) ? $value : $product->value;
             $product->save();
             return true;
         }
@@ -92,16 +92,16 @@ class ProductRepositoryEloquent implements ProductRepositoryContract
     /**
      * Update product by isbn
      * @param string $isbn
-     * @param string $name
-     * @param float $value
+     * @param ?string $name
+     * @param ?float $value
      * @return bool
      */
-    public function updateProductByIsbn(string $isbn, string $name, float $value): bool
+    public function updateProductByIsbn(string $isbn, ?string $name, ?float $value): bool
     {
         $product = Product::where('isbn', $isbn)->first();
         if($product) {
-            $product->name = $name;
-            $product->value = $value;
+            $product->name = !is_null($name) ? $name : $product->name;
+            $product->value = !is_null($value) ? $value : $product->value;
             $product->save();
             return true;
         }

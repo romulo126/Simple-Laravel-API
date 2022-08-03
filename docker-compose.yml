@@ -39,3 +39,18 @@ services:
       MYSQL_DATABASE: api
       MYSQL_CHARSET: utf8
     restart: always
+  laravel_docker:
+    build:
+      context: ./docker/php-8
+      dockerfile: Dockerfile
+    container_name: laravel_docker
+    depends_on:
+      mysql_docker:
+        condition: service_healthy
+    links:
+      - mysql_docker:db
+    ports:
+      - "8000:80"
+    volumes:
+      - ./config/site-available/laravel.conf:/etc/apache2/sites-available/000-default.conf
+    

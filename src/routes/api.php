@@ -3,8 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NewProtuctController;
-use App\Http\Controllers\Auth\LoginController;
-use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\SelectAllProtuctController;
+use App\Http\Controllers\SelectProtuctByIdController;
+use App\Http\Controllers\SelectProtuctByISBNController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('new-product', NewProtuctController::class);
+
+Route::get('all-products', SelectAllProtuctController::class);
+Route::get('product/id/{id}', SelectProtuctByIdController::class);
+Route::get('product/isbn/{isbn}', SelectProtuctByISBNController::class);

@@ -12,7 +12,7 @@ class ProductRepositoryEloquent implements ProductRepositoryContract
      * @param string $name
      * @param string $isbn
      * @param float $price
-     * @retuen boolean
+     * @retuen bool
      */
     public function insertNewProduct(string $name, string $isbn, float $value): bool
     {
@@ -22,6 +22,20 @@ class ProductRepositoryEloquent implements ProductRepositoryContract
         $product->value = $value;
         $product->user_id =1; //auth()->user()->id;
         $product->save();
+        return true;
+    }
+
+    /**
+     * verify if isbn is unique
+     * @param string $isbn
+     * @return bool
+     */
+    public function isbnUnique(string $isbn): bool
+    {
+        $product = Product::where('isbn', $isbn)->first();
+        if ($product) {
+            return false;
+        }
         return true;
     }
 }

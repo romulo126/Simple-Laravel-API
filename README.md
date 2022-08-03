@@ -6,4 +6,5 @@
 ### RUN
 
 ``` docker-compose up -d --build ```
+
 ``` docker exec -u 0 -t laravel_docker php artisan migrate ```

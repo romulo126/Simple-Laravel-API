@@ -25,23 +25,23 @@ interface ProductRepositoryContract {
 
     /**
      * Get all products
-     * @return array
+     * @return ?array
      */
-    public function getAllProducts(): array;
+    public function getAllProducts(): ?array;
 
     /**
      * Get product by id
      * @param int $id
-     * @return Product
+     * @return ?Product
      */
-    public function getProductById(int $id): Product;
+    public function getProductById(int $id): ?Product;
 
     /**
      * Get product by isbn
      * @param string $isbn
-     * @return Product
+     * @return ?Product
      */
-    public function getProductByIsbn(string $isbn): Product;
+    public function getProductByIsbn(string $isbn): ?Product;
 
     /**
      * Update product by id

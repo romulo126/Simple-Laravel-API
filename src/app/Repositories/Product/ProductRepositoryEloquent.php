@@ -51,9 +51,9 @@ class ProductRepositoryEloquent implements ProductRepositoryContract
     /**
      * Get product by id
      * @param int $id
-     * @return Product
+     * @return ?Product
      */
-    public function getProductById(int $id): Product
+    public function getProductById(int $id): ?Product
     {
         return Product::find($id);
     }
@@ -61,9 +61,9 @@ class ProductRepositoryEloquent implements ProductRepositoryContract
     /**
      * Get product by isbn
      * @param string $isbn
-     * @return Product
+     * @return ?Product
      */
-    public function getProductByIsbn(string $isbn): Product
+    public function getProductByIsbn(string $isbn): ?Product
     {
         return Product::where('isbn', $isbn)->first();
     }

@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 
-use App\Services\Product\SelectProtuctService;
+use App\Services\Product\SelectProductService;
 use Illuminate\Http\Response;
 use Exception;
 
-class SelectProtuctByIdController extends Controller
+class SelectProductByIdController extends Controller
 {
 
     /**
@@ -15,9 +15,9 @@ class SelectProtuctByIdController extends Controller
      */
     private $selectProtuctService;
 
-    public function __construct(SelectProtuctService $selectProtuctService)
+    public function __construct(SelectProductService $selectProductService)
     {
-        $this->selectProtuctService = $selectProtuctService;
+        $this->selectProtuctService = $selectProductService;
     }
 
     public function __invoke($id)

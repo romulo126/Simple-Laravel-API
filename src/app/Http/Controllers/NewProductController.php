@@ -6,7 +6,7 @@ use App\Http\Requests\NewProductRequest;
 use App\Services\Product\NewProductService;
 use Illuminate\Http\Response;
 
-class NewProtuctController extends Controller
+class NewProductController extends Controller
 {
 
     /**

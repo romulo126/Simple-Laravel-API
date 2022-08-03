@@ -4,7 +4,7 @@ namespace App\Services\Product\Contract;
 
 use App\Models\Product;
 
-interface SelectProtuctServiceContract
+interface SelectProductServiceContract
 {
 
     /**

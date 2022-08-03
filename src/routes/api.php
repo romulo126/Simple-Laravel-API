@@ -2,10 +2,12 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\NewProtuctController;
-use App\Http\Controllers\SelectAllProtuctController;
-use App\Http\Controllers\SelectProtuctByIdController;
-use App\Http\Controllers\SelectProtuctByISBNController;
+use App\Http\Controllers\NewProductController;
+use App\Http\Controllers\SelectAllProductController;
+use App\Http\Controllers\SelectProductByIdController;
+use App\Http\Controllers\SelectProductByISBNController;
+use App\Http\Controllers\DelectProductByIdController;
+use App\Http\Controllers\DelectProductByISBNController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,8 +24,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('new-product', NewProtuctController::class);
+Route::post('new-product', NewProductController::class);
 
-Route::get('all-products', SelectAllProtuctController::class);
-Route::get('product/id/{id}', SelectProtuctByIdController::class);
-Route::get('product/isbn/{isbn}', SelectProtuctByISBNController::class);
+Route::get('all-products', SelectAllProductController::class);
+Route::get('product/id/{id}', SelectProductByIdController::class);
+Route::get('product/isbn/{isbn}', SelectProductByISBNController::class);
+
+Route::delete('product/id/{id}', DelectProductByIdController::class);
+Route::delete('product/isbn/{id}', DelectProductByISBNController::class);

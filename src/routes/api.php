@@ -8,6 +8,8 @@ use App\Http\Controllers\SelectProductByIdController;
 use App\Http\Controllers\SelectProductByISBNController;
 use App\Http\Controllers\DelectProductByIdController;
 use App\Http\Controllers\DelectProductByISBNController;
+use App\Http\Controllers\UpdateProductByIdController;
+use App\Http\Controllers\UpdateProductByISBNController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,3 +34,6 @@ Route::get('product/isbn/{isbn}', SelectProductByISBNController::class);
 
 Route::delete('product/id/{id}', DelectProductByIdController::class);
 Route::delete('product/isbn/{id}', DelectProductByISBNController::class);
+
+Route::put('product/id', UpdateProductByIdController::class);
+Route::put('product/isbn', UpdateProductByISBNController::class);

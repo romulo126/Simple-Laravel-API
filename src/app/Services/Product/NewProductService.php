@@ -4,7 +4,6 @@ namespace App\Services\Product;
 
 use App\Repositories\Product\ProductRepositoryEloquent;
 use App\Services\Product\Contract\NewProductServiceContract;
-use Ramsey\Uuid\Type\Decimal;
 use Exception;
 
 class NewProductService implements NewProductServiceContract
@@ -14,9 +13,9 @@ class NewProductService implements NewProductServiceContract
     **/
     public $ProductRepositoryEloquent;
 
-    public function __construct(ProductRepositoryEloquent $ProductRepositoryEloquent)
+    public function __construct()
     {
-        $this->ProductRepositoryEloquent = $ProductRepositoryEloquent;
+        $this->ProductRepositoryEloquent = new ProductRepositoryEloquent();
     }
 
     /**

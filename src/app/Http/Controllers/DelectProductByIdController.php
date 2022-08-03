@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 
-use App\Services\Product\SelectProductService;
+use App\Services\Product\DelectProductService;
 use Illuminate\Http\Response;
 use Exception;
 
@@ -11,19 +11,19 @@ class DelectProductByIdController extends Controller
 {
 
     /**
-     * @var SelectProductService
+     * @var DelectProductService
      */
-    private $selectProductService;
+    private $delectProductService;
 
-    public function __construct(SelectProductService $selectProductService)
+    public function __construct(DelectProductService $delectProductService)
     {
-        $this->selectProductService = $selectProductService;
+        $this->delectProductService = $delectProductService;
     }
 
-    public function __invoke($ISBN)
+    public function __invoke($Id)
     {
         try{
-            $data = $this->selectProtuctService->getProductByISBN($ISBN);
+            $data = $this->delectProductService->deleteProductById($Id);
             return response()->json(['data'=>$data,
                                      'status'=>Response::HTTP_OK], Response::HTTP_OK);
         } catch (Exception $e) {
